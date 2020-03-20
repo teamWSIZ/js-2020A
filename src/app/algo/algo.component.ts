@@ -6,14 +6,92 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./algo.component.less']
 })
 export class AlgoComponent implements OnInit {
+  //algo1
   wynik: string = '---n/a---';
   tab_reversed = []; //pole klasy ...
   visible_sum = 0;
+  //algo2
+  napis = '1,3,5';
+  tab_from_string: number[] = [];
+  less_than_ten = 0;
+  more_than_twenty = 0;
+  shape_possible = false;
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  analyze() {
+    let elements = this.napis.split(',');
+    // this.tab_from_string = elements;
+    this.tab_from_string = [];
+    // this.tab_from_string.push(11);
+    // console.log(this.tab_from_string);
+    //
+    let suma = 0;
+    for(let v of elements) {
+      suma = suma + parseInt(v);
+      /// coś z parseInt(v)
+      /// tak by zapełnić tablicę this.tab_from_string
+      this.tab_from_string.push(parseInt(v));
+    }
+    //tutaj mamy już tablicę liczb wewnątrz this.tab_from_string
+    console.log(suma);
+    this.less_than_ten = 0;
+    this.more_than_twenty = 0;
+    for(let x of this.tab_from_string) {
+      if (x<10) {
+        this.less_than_ten += 1;
+      }
+      if (x>20) {
+        this.more_than_twenty += 1;
+      }
+    }
+
+    /*
+    1,3,5,5,2,1,7,7,7
+
+    #
+    ###
+    #####
+    #####
+    ##
+    #
+    #######
+    #######
+    #######
+
+    Do wykonania podstawki potrzeba kawałka 3x3
+
+    //zmienić by szukało kształtu długości 3 linii, ale każda ma mieć >=5
+     */
+    let good_lines = 0;
+    let possible = false; //zmienna typu boolean (true/false)   ; 5,5,2,5,5
+    for(let x of this.tab_from_string) {
+      if (x>=5) {
+        good_lines += 1;
+        if (good_lines>=3) {
+          possible = true;
+        }
+      } else {
+        good_lines = 0;
+      }
+    }
+    this.shape_possible = possible;
+
+    /*
+      Zadanie:
+      - wypisać liczby >=10 i <=20;
+      - i.s.: stworzyć tablicę more_less, do której dodawać tylko te liczby które spełniają
+      warunek "x >=10 && x <= 20"
+
+     */
+
+
+
+
   }
 
   check() {

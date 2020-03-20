@@ -10,7 +10,23 @@
           Suma: {{visible_sum}}
           </p>
       </div>
+    </div>
+    <div class="card">
+      <div class="card-header">Algo2</div>
+      <div class="card-body">
+        <form>
+          <input class="form-control" name="input_algo_2" [(ngModel)]="napis">
+        </form>
 
+
+        <p> <button class="btn btn-outline-primary" (click)="analyze()"> Analizuj</button>
+          <p>
+          Tablica: {{tab_from_string}} <br>
+          Liczb <10: {{less_than_ten}} <br>
+          Liczb >20: {{more_than_twenty}} <br>
+          Możliwe wycięcie 3x5: {{shape_possible}} <br>
+          </p>
+      </div>
     </div>
   </div>
 
