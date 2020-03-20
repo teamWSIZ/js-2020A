@@ -1,0 +1,31 @@
+<div class="row ">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">Problem1</div>
+      <div class="card-body">
+        <form>
+
+          <div class="form-group row">
+            <div class="form-group col-md-5">
+              <textarea class="ml-2 form-control rounded-0" placeholder="dane" name="dane"
+                        rows="10" [(ngModel)]="dane"></textarea>
+            </div>
+            <div class="form-group col-md-5">
+              <textarea class="ml-2 form-control rounded-0" placeholder="wynik" name="wynik"
+                        rows="10" [(ngModel)]="wynik"></textarea>
+            </div>
+          </div>
+
+          <p class="text-center">
+            <button class="btn btn-outline-info" (click)="sumuj()">Licz sumę</button>
+            <button class="btn btn-outline-info" (click)="solve()">Rozwiąż ABC</button>
+          </p>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-4"></div>
+
+</div>

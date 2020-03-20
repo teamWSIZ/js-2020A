@@ -1,0 +1,9 @@
+doit = function(s) {
+ let ss = s.split(' ');
+ let suma = 0;
+  for(let x of ss) {
+    suma += parseInt(x);
+  }
+  return suma;
+}
+

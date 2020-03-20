@@ -1,0 +1,40 @@
+<div class="card mt-1">
+  <div class="card-header h4">Wybierz składniki Twojej pizzy</div>
+
+  <div class="card-body">
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Składnik</th>
+        <th scope="col">Smak</th>
+        <th scope="col">Cena</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr [ngClass]="{'bg-info': sosSelected }" (click)="toggleSos()">
+        <th scope="row" >1</th>
+        <td>Sos pomidorowy</td>
+        <td> </td>
+        <td>2zł</td>
+      </tr>
+      <tr [ngClass]="{'bg-info': kabanosSelected }" (click)="toggleKabanos()">
+        <th scope="row" >2</th>
+        <td>Kabanosy</td>
+        <td> </td>
+        <td>2zł</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Oregano</td>
+        <td> </td>
+        <td>5zł</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-footer"></div>
+
+
+</div>

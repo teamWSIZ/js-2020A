@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header">Guess the number (0--1000)</div>
+  <div class="card-body">
+    <form>
+      <div class="form-group row">
+        <label for="Y" class="col-md-4 col-form-label">Liczba:</label>
+        <div class="col-md-8">
+          <input class="form-control" type="text" id="Y" name="Y"
+                 [(ngModel)]="guess">
+        </div>
+      </div>
+      <p class="text-right">
+        <button class="btn btn-outline-info" (click)="check()">Sprawdź</button>
+      </p>
+    </form>
+
+  </div>
+  <div class="card-footer">
+    Wynik sprawdzenia: {{wynikSprawdzenia}}
+  </div>
+</div>

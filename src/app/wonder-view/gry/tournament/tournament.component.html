@@ -1,0 +1,60 @@
+
+<div class="card">
+
+  <div class="card-header">Tournament {{liczba1}}</div>
+  <div class="card-body">
+    <p> Pierwszy wynik: {{wyniki[0]}}</p>
+    <p> Trzeci wynik: {{wyniki[2]}}</p>
+    <p> Liczba wyników: {{wyniki.length}}</p>
+    <table class="table table-hover">
+      <tbody>
+      <tr *ngFor="let w of wyniki">
+        <td> {{w}} </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer">
+    <form>
+      <div class="form-group row">
+        <div class="col-md-6">
+          <input class="form-control" name="nowyw" [(ngModel)]="nowy_wynik">
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-outline-info mr-2" (click)="sortuj_wyniki()">
+            sortuj</button>
+          <button class="btn btn-outline-info" (click)="add()">dodaj {{nowy_wynik}}</button>
+          <button class="btn btn-outline-success" (click)="prepareModal()" data-toggle="modal" data-target="#aaamodal">Mmm..</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--Modals-->
+<div class="modal text-dark" id="aaamodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Wybrane elementy</h5>
+      </div>
+      <div class="modal-body">
+        <p>
+          Duze wyniki: {{large_results}}
+        </p>
+        <p>
+          Parzyste wyniki: {{even_results}}
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-warning" data-dismiss="modal">
+          Porzuć
+        </button>
+        <button type="button" class="btn btn-outline-info" data-dismiss="modal">
+          Zapisz
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="card-header">
+    Kantor wymiany walut (autoryzowany przez KNF)
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="form-group row">
+        <label for="X" class="col-md-4 col-form-label">Kwota PLN</label>
+        <div class="col-md-8">
+          <input type="number" class="form-control" id="X" name="X"
+                 placeholder="(podaj twoją ofertę)"
+                 [(ngModel)]="amount">
+        </div>
+      </div>
+      <p class="text-center">
+        <button class="btn btn-outline-info" (click)="compute(amount)">
+          Przelicz</button>
+      </p>
+      <hr>
+      <div class="form-group row">
+        <label for="X" class="col-md-4 col-form-label">Kwota EUR</label>
+        <div class="col-md-8">
+          <input type="number" class="form-control" id="Y" name="Y"
+                 placeholder="(podaj twoją ofertę)" readonly
+                 [(ngModel)]="amountEUR">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="X" class="col-md-4 col-form-label">Kwota USD</label>
+        <div class="col-md-8">
+          <input type="number" class="form-control" id="Z" name="Z"
+                 placeholder="(podaj twoją ofertę)"
+                 [(ngModel)]="amountUSD">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="X" class="col-md-4 col-form-label">Kwota CNY</label>
+        <div class="col-md-8">
+          <input type="number" class="form-control" id="T" name="T"
+                 placeholder="(podaj twoją ofertę)"
+                 [(ngModel)]="amountCNY">
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+  <div class="card-footer">
+  </div>
+</div>
