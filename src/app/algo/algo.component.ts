@@ -16,6 +16,7 @@ export class AlgoComponent implements OnInit {
   less_than_ten = 0;
   more_than_twenty = 0;
   shape_possible = false;
+  tab_good_numbers: number[] = [];
 
   constructor() {
   }
@@ -88,7 +89,20 @@ export class AlgoComponent implements OnInit {
       warunek "x >=10 && x <= 20"
 
      */
+    this.tab_good_numbers = [];
+    for(let nn of this.tab_from_string) {
+      if (nn>=10 && nn<=20) {
+        this.tab_good_numbers.push(nn);
+      }
+    }
 
+    // this.tab_good_numbers = [];
+    // for(let i=0; i<this.tab_from_string.length; i+=1) {    //typ pętli chodzący po "indeksach tablicy"
+    //   let nn = this.tab_from_string[i];
+    //   if (nn>=10 && nn<=20) {
+    //     this.tab_good_numbers.push(nn);
+    //   }
+    // }
 
 
 
