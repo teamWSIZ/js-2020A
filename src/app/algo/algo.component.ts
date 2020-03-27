@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {DailyRaport} from "./daily-raport";
+
 
 @Component({
   selector: 'app-algo',
@@ -18,11 +20,16 @@ export class AlgoComponent implements OnInit {
   shape_possible = false;
   tab_good_numbers: number[] = [];
 
+  raport: DailyRaport;  //to będzie raport do celów testowych
+
   constructor() {
   }
 
   ngOnInit() {
+    this.raport = new DailyRaport(new Date(),
+      10, 674, 1520);
   }
+
 
   analyze() {
     let elements = this.napis.split(',');
@@ -154,4 +161,7 @@ export class AlgoComponent implements OnInit {
   }
 
 
+  show_raport(raport: DailyRaport): string {
+    return JSON.stringify(raport);
+  }
 }
