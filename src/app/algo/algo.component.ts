@@ -21,13 +21,18 @@ export class AlgoComponent implements OnInit {
   tab_good_numbers: number[] = [];
 
   raport: DailyRaport;  //to będzie raport do celów testowych
+  bb_raports: DailyRaport[] = [];
 
   constructor() {
   }
 
   ngOnInit() {
-    this.raport = new DailyRaport(new Date(),
-      10, 674, 1520);
+    this.raport = new DailyRaport(new Date(), 10, 674, 1520);
+
+    this.bb_raports.push(new DailyRaport(new Date('2020-03-24'), 12, 575, 1398))
+    this.bb_raports.push(new DailyRaport(new Date('2020-03-25'), 10, 659, 1616))
+    this.bb_raports.push(new DailyRaport(new Date('2020-03-26'), 7, 651, 1694))
+    this.bb_raports.push(new DailyRaport(new Date('2020-03-27'), 10, 674, 1520))
   }
 
 
@@ -163,5 +168,13 @@ export class AlgoComponent implements OnInit {
 
   show_raport(raport: DailyRaport): string {
     return JSON.stringify(raport);
+  }
+
+  new_report() {
+    this.raport = new DailyRaport(new Date(), 0, 0, 0);
+  }
+
+  save_new_report() {
+    this.bb_raports.push(this.raport);
   }
 }
